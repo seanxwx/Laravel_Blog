@@ -72,9 +72,9 @@ class CategoryController extends CommonController
         ];
 
         $message = [
-            'cate_name.required'=>'分类名称不能为空',
-            'password.between'=>'新密码须在6-20之间',
-            'password.confirmed'=>'新密码和确认密码不一致'
+            'cate_name.required'=>'Category cannot be blank',
+            'password.between'=>'New password should between 6 - 20 characters',
+            'password.confirmed'=>'New password does not meet Confirm password'
         ];
 
         $validator = Validator::make($input,$rules,$message);

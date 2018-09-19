@@ -1,39 +1,39 @@
 @extends('layouts.admin')
 @section('content')
-    <!--面包屑导航 开始-->
+    <!--Breadcrumbs navigation Start-->
     <div class="crumb_warp">
-        <!--<i class="fa fa-bell"></i> 欢迎使用登陆网站后台，建站的首选工具。-->
-        <i class="fa fa-home"></i> <a href="{{url('admin/info')}}">首页</a> &raquo; 全部分类
+        <!--<i class="fa fa-bell"></i>-->
+        <i class="fa fa-home"></i> <a href="{{url('admin/info')}}">Home</a> &raquo; All Category
     </div>
-    <!--面包屑导航 结束-->
+    <!--Breadcrumbs navigation End-->
 
 
-    <!--搜索结果页面 列表 开始-->
+    <!--Search results page list start-->
     <form action="#" method="post">
         <div class="result_wrap">
             <div class="result_title">
-            <h3>分类管理</h3>
+            <h3>Category management</h3>
             </div>
-            <!--快捷导航 开始-->
+            <!--Quick navigation Start-->
             <div class="result_content">
                 <div class="short_wrap">
-                    <a href="{{url('admin/category/create')}}"><i class="fa fa-plus"></i>添加分类</a>
-                    <a href="{{url('admin/category')}}"><i class="fa fa-recycle"></i>全部分类</a>
+                    <a href="{{url('admin/category/create')}}"><i class="fa fa-plus"></i>Add Category</a>
+                    <a href="{{url('admin/category')}}"><i class="fa fa-recycle"></i>All Category</a>
                 </div>
             </div>
-            <!--快捷导航 结束-->
+            <!--Quick navigation End-->
         </div>
 
         <div class="result_wrap">
             <div class="result_content">
                 <table class="list_tab">
                     <tr>
-                        <th class="tc" width="5%">排序</th>
+                        <th class="tc" width="5%">Order</th>
                         <th class="tc" width="5%">ID</th>
-                        <th>分类名称</th>
-                        <th>标题</th>
-                        <th>查看次数</th>
-                        <th>操作</th>
+                        <th>Category</th>
+                        <th>Title</th>
+                        <th>Views</th>
+                        <th>Operate</th>
                     </tr>
 
                     @foreach($data as $v)
@@ -48,8 +48,8 @@
                         <td>{{$v->cate_title}}</td>
                         <td>{{$v->cate_view}}</td>
                         <td>
-                            <a href="{{url('admin/category/'.$v->cate_id.'/edit')}}">修改</a>
-                            <a href="javascript:;" onclick="delCate({{$v->cate_id}})">删除</a>
+                            <a href="{{url('admin/category/'.$v->cate_id.'/edit')}}">Modify</a>
+                            <a href="javascript:;" onclick="delCate({{$v->cate_id}})">Delete</a>
                         </td>
                     </tr>
 
@@ -90,7 +90,7 @@
             </div>
         </div>
     </form>
-    <!--搜索结果页面 列表 结束-->
+        <!--Search results page list end-->
 
     <script>
         // $(function(){

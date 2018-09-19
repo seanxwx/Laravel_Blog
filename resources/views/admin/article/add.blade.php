@@ -2,14 +2,14 @@
 @section('content')
 
 
-    <!--面包屑导航 开始-->
+    <!--Breadcrumbs navigation Start-->
     <div class="crumb_warp">
-        <!--<i class="fa fa-bell"></i> 欢迎使用登陆网站后台，建站的首选工具。-->
-        <i class="fa fa-home"></i> <a href="{{url('admin/info')}}">首页</a> &raquo; Article manage
+        <!--<i class="fa fa-bell"></i>-->
+        <i class="fa fa-home"></i> <a href="{{url('admin/info')}}">Home</a> &raquo; Article manage
     </div>
-    <!--面包屑导航 结束-->
+    <!--Breadcrumbs navigation End-->
 
-	<!--结果集标题与导航组件 开始-->
+	<!--Search results page list start-->
 	<div class="result_wrap">
         <div class="result_title">
             <h3>Article Management</h3>
@@ -32,7 +32,7 @@
             </div>
         </div>
     </div>
-    <!--结果集标题与导航组件 结束-->
+    <!--Search results page list End-->
     
     <div class="result_wrap">
         <form action="{{url('admin/category')}}" method="post">
@@ -40,10 +40,10 @@
             <table class="add_tab">
                 <tbody>
                     <tr>
-                        <th width="120"><i class="require"></i>分类：</th>
+                        <th width="120"><i class="require"></i>Classification：</th>
                         <td>
                             <select name="cate_id">
-                                {{--<option value="0">==顶级分类==</option>--}}
+                                {{--<option value="0">==Top classification==</option>--}}
                                 @foreach($data as $d)
                                     <option value="{{$d->cate_id}}">{{$d->_cate_name}}</option>
                                     @endforeach
@@ -53,14 +53,14 @@
                     </tr>
 
                     <tr>
-                        <th>文章标题：</th>
+                        <th>Article Headings：</th>
                         <td>
                             <input type="text" class="lg" name="article_title">
 
                         </td>
                     </tr>
                     <tr>
-                        <th><i class="require"></i>编辑：</th>
+                        <th><i class="require"></i>Edit：</th>
                         <td>
                             <input type="text" class="sm" name="article_editor">
 
@@ -68,7 +68,7 @@
                     </tr>
 
                     <tr>
-                        <th>缩略图：</th>
+                        <th>Thumbnail：</th>
                         <td>
                             <input type="text" size="50" name="article_thumb">
                             <input id="file_upload" name="file_upload" type="file" multiple="true">
@@ -96,14 +96,14 @@
                     </tr>
 
                     <tr>
-                        <th>关键词：</th>
+                        <th>Keywords：</th>
                         <td>
                             <textarea name="article_tag"></textarea>
                         </td>
                     </tr>
 
                     <tr>
-                        <th>描述：</th>
+                        <th>Description：</th>
                         <td>
                             <textarea class="lg" name="article_description"></textarea>
 
@@ -111,7 +111,7 @@
                     </tr>
 
                     <tr>
-                        <th>文章内容：</th>
+                        <th>Content：</th>
                         <td>
                             <script type="text/javascript" charset="utf-8" src="{{asset('resources/org/ueditor/ueditor.config.js')}}"></script>
                             <script type="text/javascript" charset="utf-8" src="{{asset('resources/org/ueditor/ueditor.all.min.js')}}"> </script>
@@ -136,7 +136,7 @@
                     <tr>
                         <th></th>
                         <td>
-                            <input type="submit" value="提交">
+                            <input type="submit" value="Submit">
                             <input type="button" class="back" onclick="history.go(-1)" value="返回">
                         </td>
                     </tr>

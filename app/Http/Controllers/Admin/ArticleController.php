@@ -11,7 +11,7 @@ class ArticleController extends CommonController
 {
     public function index(){
 
-        //get.admin/article 全部文章列表
+        //get.admin/article All article list
 
         echo 'article';
 

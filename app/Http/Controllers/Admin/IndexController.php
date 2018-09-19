@@ -31,9 +31,9 @@ class IndexController extends CommonController
             ];
 
             $message = [
-                'password.required'=>'新密码不能为空',
-                'password.between'=>'新密码须在6-20之间',
-                'password.confirmed'=>'新密码和确认密码不一致'
+                'password.required'=>'New Password cannot be blank',
+                'password.between'=>'New password should between 6 to 20 characeters',
+                'password.confirmed'=>'New password does not meet the confirm password'
             ];
 
            $validator = Validator::make($input,$rules,$message);
@@ -44,9 +44,9 @@ class IndexController extends CommonController
               if($input['password_o']==$_password){
                   $user->user_pass = Crypt::encrypt($input['password']);
                   $user->update();
-                  return back()->with('errors','密码修改成功');
+                  return back()->with('errors','Password change successfully');
               }else{
-                  return back()->with('errors','原密码错误');
+                  return back()->with('errors','Old password wrong');
               }
 
                //echo 'yes';

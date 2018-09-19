@@ -29,12 +29,12 @@ class LoginController extends CommonController
             $code = new \Code;
             $_code = $code->get();
             if (strtoupper($input['code']) != $_code) {
-                return back()->with('msg', '验证码错误');
+                return back()->with('msg', 'Verification code incorrect');
             }
 
             $user = User::first();
             if($user->user_name != $input['user_name'] || Crypt::decrypt($user->user_pass) != $input['user_pass']){
-                return back()->with('msg', '用户名或密码错误');
+                return back()->with('msg', 'Username or password incorrect');
             }
             session(['user'=>$user]);
 //            dd(session('user'));
